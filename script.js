@@ -197,7 +197,7 @@ function loadNextQuestion(attempts, question, questions, points) {
 function scrollFunc() {
 
     //RESIZE HEADER ON SCROLL
-    s = $(document).scrollTop();
+    var s = $(document).scrollTop();
 
     if (s > 50) {
         $('.top_bar').addClass('mini');
@@ -466,7 +466,7 @@ $(document).ready(function() {
         $('.show_filter span').html($(this).find('span').html());
 
         //HIDE THE FILTERS ON MOBILE AFTER YOU HAVE SELECTED ONE
-        if (filter_on_show == 0) {
+        if (filter_on_show === 0) {
             filter_on_show = 1;
             $('.filter').css({
                 overflow: 'visible',
@@ -515,7 +515,7 @@ $(document).ready(function() {
         $('.carousel .carousel-inner').each(function() {
             var t = $(this);
 
-            if (cat == "ALL") {
+            if (cat === "ALL") {
                 t.html($(this).parent().find('.hidden').html());
             } else {
                 $(this).parent().find('.hidden').find('.item[data-cat="' + cat + '"]').each(function() {
